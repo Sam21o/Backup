@@ -1,0 +1,857 @@
+EXPERIMENT NO. 1
+Date of Performance: 
+Date of Submission: 
+Aim: Case study on building Data Warehouse/ Data Mart.
+Software used: Any online drawing tool.
+Theory:
+1. Detailed Problem statement
+The ice cream parlor wants to gain a better understanding of its customers and their 
+buying habits. They need to be able to track sales trends, identify popular flavors, and 
+understand customer demographics. They also want to use data to improve marketing 
+campaigns and personalize customer experiences.
+2. Analysis to be done
+• Customer Data: Collect data on customer demographics, purchase history, loyalty 
+program memberships, and feedback.
+• Product Data: Track sales volume, inventory levels, and popularity of different 
+flavors and toppings.
+• Sales Data: Analyze sales trends, peak hours, and revenue generated from 
+different promotions.
+• Marketing Data: Track the effectiveness of different marketing campaigns, 
+including social media, email, and advertising.
+3. How the above analysis improves the business i.e. above problem definition
+• Targeted Marketing: Identify customer segments and tailor marketing campaigns 
+to their preferences.
+• Inventory Management: Predict demand for different flavors and optimize 
+inventory levels.
+• Product Development: Identify popular flavors and trends to create new and 
+innovative products.
+• Customer Service: Understand customer feedback and address issues to improve 
+customer satisfaction.
+4. Design Information Package diagram
+5. Details of Dimension table
+6. Fact table
+7. Star Schema
+8. Snowflake Schema 
+CONCLUSION: 
+By implementing a data warehouse/data mart, the ice cream parlor can gain valuable insights into 
+customer data and improve their business operations. They can use this data to make more informed 
+decisions about marketing, product development, and customer service.
+
+
+EXPERIMENT NO.2
+Aim: Implementation of all dimension tables and fact table based on experiment 1 case study.
+Software used: MySQL
+Theory:
+• Problem definition 
+The ice cream parlor wants to gain a better understanding of its customers and their buying 
+habits. They need to be able to track sales trends, identify popular flavors, and understand 
+customer demographics. They also want to use data to improve marketing campaigns and 
+personalize customer experiences.
+We will implement of all dimension tables and fact table based on experiment 1 case study
+• Fact table details 
+Ice Cream Parlour Inventory Managment Fact Table
+Attributes Description
+Customer_Id Foreign Key referencing Customer dimension table
+Store Id Foreign Key referencing Store dimension table
+Product Id Foreign Key referencing Product dimension table
+Sales_Id Represents Sales of the product
+Date Foreign Key referencing Time dimension table
+Quantity Represents Quantity of the product
+Total_sales_Amount Represents Sales amount of the store
+• Dimension table details 
+Store dimension 
+Attributes Description
+Store_ Id Unique key to identify the] store
+Name Represents name of the store 
+ Location Represents location of the store
+List item Represents the item in the store
+Store size Represents the size of the store
+Product dimension
+Attributes Description
+Product Id Unique key to identify the Product
+Flavor Represents Flavor of the product
+Size Represents size of the product
+Price Represents price of the product
+Category Represents category of the product
+Toppings Represents toppings of the product
+Customer dimension
+Attributes Description
+Email Represents Email of the customer
+Customer Id Unique key to identify the customer
+Name Represents Name of the customer
+Address Represents Address of the customer
+ Phone no Represents Phone no of the customer
+Age Represents Age of the customer
+Time dimension
+Attributes Description
+Date Unique key to identify the customer
+Time Represents time of the customer
+Month Represents Month of the store
+Year Represents Year of the store
+Day_of _week Represents the Day_of_week of the store
+CONCLUSION: Successfully implemented all the dimension tables and fact table based on experiment 1 case study.
+
+
+EXPERIMENT NO. 3
+Date of Performance:
+Date of Submission:
+Aim: To implement OLAP operations: Slice, Dice, Roll up, Drill down, and Pivot based onexperiment 1 case
+study.
+Theory:
+3.1 Roll up (drill-up):
+ROLLUP is used in tasks involving subtotals. It creates subtotals at any level of aggregation needed, from the most
+detailed up to a grand total i.e., climbing up a concept hierarchy for the dimension such astime or geography. Example:
+A Query could involve a ROLLUP of year>month>day or country>state>city.
+Input & Output
+Explanation:
+The SQL query calculatestotal salesfor each store in an ice cream parlor, using the ROLLUP function to create summary
+levels. It joins sales data with store information and groups the results by store ID to provide a hierarchical view of
+total sales.
+3.2Drill down (Roll down):
+This is a reverse of the ROLL UP operation discussed above. The data is aggregated from ahigher-level
+summary to a lower-level summary/detailed data.
+Input & Output
+Explanation:
+The SQL query calculates total sales for each product in each store, joining sales data with product and store
+information. It groups the results by store ID and product ID to provide a detailed view of sales performance.
+3.3 Slicing
+A slice in a multidimensional array is a column of data corresponding to a single value for one or more
+members of the dimension. It helps the user to visualize and gather the information specific to a
+dimension.
+Input & Output
+Explanation:
+The SQL query calculates the total sales for product 1 in store 1. It joins sales data with product information, filters
+for store 1, groups by product ID, and orders the result.
+3.4 Dicing:
+Dicing is similar to slicing, but it works a little bit differently. When one thinks of slicing, filtering is
+done to focus on a particular attribute. Dicing, on the other hand, is more of a zoom feature that selects
+a subset over all the dimensions, but for specific values of the dimension.
+Input & Output
+Explanation:
+The SQL query calculates the total sales for products 1 and 2 in store 1. It joins sales data with product information,
+filters for store 1 and specific product IDs, groups by product ID, and orders the result.
+3.5 Pivot
+Pivot otherwise known as Rotate changes the dimensional orientation of the cube, i.e. rotates the data axes to view
+the data from different perspectives. Pivot groupsdata with different dimensions. The below cubes show 2D
+representation of Pivot.
+Input & Output
+Explanation:
+The SQL query calculates the total sales of products 1, 2, and 3 for each store. It joins sales data with store
+information, uses conditional expressions to sum the sales amounts for each product, groups by store ID, and orders
+the result
+CONCLUSION:
+From this practical, I learned how to apply OLAP (Online Analytical Processing) operations such as Slice, Dice, roll
+up, Drill down, and Pivot to analyse and manipulate data efficiently. These operations are valuable tools for gaining
+insights from complex datasets, as demonstrated in our experiment with online transaction data. They allow for
+dynamic exploration and summarization of data, enabling better decision-making and a deeper understanding of
+spending behaviours and financial patterns.
+
+
+
+EXPERIMENT NO.4 
+ 
+Date of Performance:
+Date of Submission:
+ AIM: Aim: Implementation of Bayesian Classification Algorithm.
+ Software used: Java / C/ Python
+Theory:
+It is a classification technique based on Bayes’ Theorem with an assumption of independence among 
+predictors. A Naive Bayes classifier assumes that the presence of a particular feature in a class is unrelated to 
+the presence of any other feature. For example, a fruit may be considered to be an apple if it is red, round, and 
+about 3 inches in diameter. Even if these features depend on each other or upon the existence of the other 
+features, all of these properties independently contribute to the probability that this fruit is an apple and that is 
+why it is known as ‘Naive’.
+Naive Bayes model is easy to build and particularly useful for very large data sets. Along with simplicity, 
+Naive Bayes is known to outperform even highly sophisticated classification methods.
+Bayes theorem provides a way of calculating posterior probability P(c|x) from P(c), P(x) and P(x|c).
+Above, a training data set of weather and corresponding target variable ‘Play’ (suggesting possibilities 
+of playing). Now, we need to classify whether players will play or not based on weather condition.
+Step 1: Convert the data set into a frequency table
+Step 2: Create Likelihood table by finding the probabilities like Overcast probability = 0.29 and probability of 
+• P(c|x) is the posterior probability of class (c, target) given predictor (x, attributes).
+• P(c) is the prior probability of class.
+• P(x|c) is the likelihood which is the probability of predictor given class.
+• P(x) is the prior probability of predictor.
+• Step 3: Now, use Naive Bayesian equation to calculate the posterior probability for each class. The class with 
+the highest posterior probability is the outcome of prediction.
+• Problem: Players will play if weather is sunny. Is this statement correct?
+We can solve it using above discussed method of posterior probability.
+• P(Yes | Sunny) = P( Sunny | Yes) * P(Yes) / P (Sunny)
+• Here we have P (Sunny |Yes) = 3/9 = 0.33, P(Sunny) = 5/14 = 0.36, P( Yes)= 9/14 = 0.64
+• Now, P (Yes | Sunny) = 0.33 * 0.64 / 0.36 = 0.60, which has higher probability.
+Naive Bayes uses a similar method to predict the probability of different class based on various 
+attributes. This algorithm is mostly used in text classification and with problems having multiple classes.
+Advantages:
+• It is easy and fast to predict class of test data set. It also perform well in multi class prediction
+• When assumption of independence holds, a Naive Bayes classifier performs better compare to other models like 
+logistic regression and you need less training data.
+• It perform well in case of categorical input variables compared to numerical variable(s). For numerical variable, 
+normal distribution is assumed (bell curve, which is a strong assumption).
+Disadvantages:
+• If categorical variable has a category (in test data set), which was not observed in training data set, then model 
+will assign a 0 (zero) probability and will be unable to make a
+Frequency”. To solve this, we can use the smoothing technique. One of the simplest smoothing 
+techniques is called Laplace estimation.
+• Another limitation of Naive Bayes is the assumption of independent predictors. In real life, it is almost impossible 
+that we get a set of predictors which are completely independent.
+Applications of Naive Bayes Algorithms
+• Real time Prediction: Naive Bayes is an eager learning classifier and it is sure fast. Thus, it could be used for 
+making predictions in real time.
+• Multi class Prediction: This algorithm is also well known for multi class prediction feature. Here we can predict 
+the probability of multiple classes of target variable.
+• Text classification/ Spam Filtering/ Sentiment Analysis: Naive Bayes classifiers mostly used in text 
+classification (due to better result in multi class problems and independence rule) have higher success rate as 
+compared to other algorithms. As a result, it is widely used in Spam filtering (identify spam e-mail) and Sentiment 
+Analysis (in social media analysis, to identify positive and negative customer sentiments)
+• Recommendation System: Naive Bayes Classifier and Collaborative Filtering together builds a 
+Recommendation System that uses machine learning and data mining techniques to filter unseen information and 
+predict whether a user would like a given resource or not
+PROGRAM:
+import pandas as pd 
+import numpy as np
+from sklearn.model_selection import train_test_split 
+from sklearn.naive_bayes import GaussianNB
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+# Step 1: Generate a simulated dataset for the ice cream parlour 
+np.random.seed(42) # For reproducibility
+data_size = 1000 # You can change this to match your needs
+data = {
+'age': np.random.randint(18, 65, size=data_size), # Ages between 18 and 65 
+'location': np.random.choice(['Downtown', 'Uptown', 'Suburb'], size=data_size), 
+'flavor': np.random.choice(['Vanilla', 'Chocolate', 'Strawberry'],size=data_size), 
+'size': np.random.choice(['Small', 'Medium', 'Large'], size=data_size),
+'price': np.random.uniform(3.0, 6.0, size=data_size), # Prices between $3 and $6 
+'purchased': np.random.choice(['yes', 'no'], size=data_size, p=[0.7, 0.3]) # 70% yes, 30% no
+}
+# Create DataFrame
+ice_cream_data = pd.DataFrame(data)
+# Display the first few rows of the simulated dataset 
+print("Simulated Ice Cream Data:") 
+print(ice_cream_data.head())
+# Step 2: Prepare the data
+# Map categorical columns to numerical values
+ice_cream_data['location'] = ice_cream_data['location'].map({'Downtown': 0, 'Uptown': 1, 'Suburb': 2})
+ice_cream_data['flavor'] = ice_cream_data['flavor'].map({'Vanilla': 0, 'Chocolate': 1, 'Strawberry': 2})
+ice_cream_data['size'] = ice_cream_data['size'].map({'Small': 0, 'Medium': 1, 'Large': 2}) 
+ice_cream_data['purchased'] = ice_cream_data['purchased'].map({'no': 0, 'yes': 1}) # Target
+# Select the features and target
+X = ice_cream_data[['age', 'location', 'flavor', 'size', 'price']] # Features 
+y = ice_cream_data['purchased'] # Target
+# Split the dataset into training and testing sets (80% train, 20% test)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# Step 3: Train the Naive Bayes model
+model = GaussianNB() # Using Gaussian Naive Bayes 
+model.fit(X_train, y_train)
+# Step 4: Make predictions on the test set 
+y_pred = model.predict(X_test)
+# Step 5: Evaluate the model
+accuracy = accuracy_score(y_test, y_pred) 
+conf_matrix = confusion_matrix(y_test, y_pred) 
+report = classification_report(y_test, y_pred)
+# Display results
+print(f"\nModel Accuracy: {accuracy * 100:.2f}%") 
+print("\nConfusion Matrix:")
+print(conf_matrix) 
+print("\nClassification Report:") 
+print(report)
+# Combine actual and predicted values for comparison
+results_df = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred})
+# Display actual vs predicted results 
+print("\nActual vs Predicted (First 10):") 
+print(results_df.head(10)
+OUPUT
+CONCLUSION:
+In this project, we employed a Naive Bayes classifier to predict flight delays using a simulated dataset. The model 
+utilized features such as airport information, time of day, and weather conditions to identify patterns associated 
+with delays. Overall, this project illustrates the potential of Bayesian methods in optimizing flight operations and 
+improving customer service in the airline industry.
+
+
+EXPERIMENT NO. 6 
+Date of Performance: 
+Date of Submission: 
+Aim: Perform data preprocessing task and demonstrate Classification, Clustering, Association 
+algorithm on data sets using data mining tool (WEKA / R tool) 
+Software used: WEKA 
+Theory: 
+Waikato Environment for Knowledge Analysis (Weka) is a popular suite of machine learning software written 
+in Java, developed at the University of Waikato, New Zealand. It is free software licensed under the GNU 
+General Public License. 
+Weka is a workbench that contains a collection of visualization tools and algorithms for data analysis 
+and predictive modeling, together with graphical user interfaces for easy access to these functions. 
+This original version was primarily designed as a tool for analyzing data from agricultural domains, but the 
+more recent fully Java-based version (Weka 3), for which development started in 1997, is now used in many 
+different application areas, in particular for educational purposes and research. 
+Advantages of Weka include:  Free availability under the GNU General Public License. Portability, since it is fully implemented in the Java 
+programming language and thus runs on almost any modern computing platform.  A comprehensive collection of data preprocessing and modeling techniques.  Ease of use due to its graphical user interfaces. 
+Weka supports several standard data mining tasks, more specifically, data preprocessing, clustering, 
+classification, regression, visualization, and feature selection. All of Weka's techniques are predicated on the 
+assumption that the data is available as one flat file or relation, where each data point is described by a fixed 
+number of attributes (normally, numeric or nominal attributes, but some other attribute types are also 
+supported). Weka provides access to SQL databases using Java Database Connectivity and can process the 
+result returned by a database query. It is not capable of multi- relational data mining, but there is separate 
+software for converting a collection of linked database tables into a single table that is suitable for processing 
+using Weka. 
+Weka's main user interface is the Explorer, but essentially the same functionality can be accessed through 
+the component-based Knowledge Flow interface and from the command line. There is also the Experimenter, 
+which allows the systematic comparison of the predictive performance of Weka's machine learning algorithms 
+on a collection of datasets. 
+The Explorer interface features several panels providing access to the main components of the workbench: 
+The Preprocess panel has facilities for importing data from a database, a comma- separated values (CSV) file, 
+etc., and for preprocessing this data using a so-called filtering algorithm. These filters can be used to transform 
+the data (e.g., turning numeric attributes into discrete ones) and make it possible to delete instances and 
+attributes according to specific criteria. 
+The Classify pane enables applying classification and regression algorithms (indiscriminatel called 
+classifiers in Weka) to the resultingdataset to estimate the accuracy of the resulting predictive model, and to 
+visualize erroneous predictions, receiver operating characteristic (ROC) curves, etc., or the model itself 
+(if the model is amenable to visualization like, e.g., a decision tree). 
+The Associate panel provides access to association rule learners that attempt to identify all important 
+interrelationships between attributes in the data. 
+The Cluster panel gives access to the clustering techniques in Weka, e.g., the simple k-means algorithm. 
+There is also an implementation of the expectation maximization algorithm for learning a mixture of normal 
+distributions. 
+The Select attributes panel provides algorithms for identifying the most predictive attributes in a dataset. 
+The Visualize panel shows a scatter plot matrix, where individual scatter plots can be selected and 
+enlarged, and analyzed further using various selection operators. 
+Preprocessing in WEKA 
+Selecting or Filtering Attributes 
+In the "Filter" panel, click on the "Choose" button. This will show a popup window with a list available 
+filters. Scroll down the list and select the "weka.filters.unsupervised.attribute.Remove" filter as shown in 
+Figure. 
+Classification using WEKA: 
+This experiment illustrates the use of naïve bayes classifier in weka. Consider the sample data set 
+“employee”data available at arff format. This document assumes that appropriate data preprocessing has been 
+performed. 
+Steps involved in this experiment: 
+1. Begin the experiment by loading the data (employee.arff) into weka. 
+Step2: Next, we select the “classify” tab and click “choose” button to select the “Naïve Bayes” 
+classifier. 
+Step3: Now specify the various parameters. These can be specified by clicking in the text box to the 
+right of the chose button. In this example, accept the default values his default version does perform 
+some pruning but does not perform error pruning. 
+Step4: Under the “text “options in the main pane l. select the 10-fold cross validation as our 
+evaluation approach. Since we don’t have separate evaluation data set, this is necessary to get a 
+reasonable idea of accuracy of generated model. 
+Step-5: now click”start”to generate the model .the ASCII version of the tree as well as evaluation 
+statistic will appear in the right panel when the model construction is complete. 
+Step-6: Note that the classification accuracy ofmodel is about 69%.this indicates that we may find 
+more work. (Either in preprocessing or in selecting current parameters for the classification) 
+Step-7: Now weka also lets us a view a graphical version of the classification tree. This can be done 
+by right clicking the last result set and selecting “visualize tree” from the pop-up menu. 
+Step-8: Use the model to classify the new instances. 
+Step-9: In the main panel under “text “options click the “supplied test set” radio button and then 
+click the “set” button. This will show pop-up window which will allow you to open the file 
+containing test instances. 
+Data set employee.arff: 
+@relation employee 
+@attribute age {25, 27, 28, 29, 30, 35, 48} @attribute 
+salary{10k,15k,17k,20k,25k,30k,35k,32k} @attribute performance 
+{good, avg, poor} @data 
+% 
+25, 10k, poor 
+27, 15k, poor 
+27, 17k, poor 
+28, 17k, poor 
+29, 20k, avg 
+30, 25k, avg 
+29, 25k, avg 
+30, 20k, avg 
+35, 32k, good 
+48, 34k, good 
+48, 32k, good 
+% 
+The following screenshot shows the classification rules that were generated when naive 
+bayes algorithm is applied on the given dataset 
+Clustering Using WEKA: 
+This experiment illustrates the use of simple k-mean clustering with Weka explorer. The sample data 
+set used for this example is based on the iris data available in ARFF format. This document assumes that 
+appropriate preprocessing has been performed. This iris dataset includes 150 instances. 
+Steps involved in this Experiment 
+Step 1: Run the Weka explorer and load the data file iris.arff in preprocessing interface. 
+Step 2: In order to perform clustering, select the ‘cluster’ tab in the explorer and click on the choose 
+button. This step results in a dropdown list of available clustering algorithms. 
+Step 3: In this case we select ‘simple k-means’. 
+Step 4: Next click in text button to the right of the choose button to get popup window shown in the 
+screenshots. In this window we enter six on the number of clusters and we leave the value of the 
+seed on as it is. The seed value is used in generating a random number which is used for making the 
+internal assignments of instances of clusters. 
+Step 5: Once of the option have been specified. We run the clustering algorithm there we must make 
+sure that they are in the ‘cluster mode’ panel. The use of training set option is selected and then 
+we click ‘start’ button. This process and resulting window are shown in the following screenshots. 
+Step 6: The result window shows the centroid of each cluster as well as statistics on the number and 
+the percent of instances assigned to different clusters. Here clusters centroid are means vectors for 
+each cluster. This clusters can be used to characterized the cluster. For eg, the centroid of cluster1 
+shows the class iris.versicolor mean value of the sepal length is 5.4706, sepal width 2.4765, petal 
+width 1.1294, petal length 3.7941. 
+Step 7: Another way of understanding characteristics of each cluster through visualization, we can 
+do this, try right clicking the result set on the result. List panel and selecting the visualize cluster 
+assignments. 
+The following screenshot shows the clustering rules that were generated when simple k means 
+algorithm is applied on the given dataset. 
+Interpretation of the above visualization 
+From the above visualization, we can understand the distribution of sepal length and petal length in each 
+cluster. For instance, for each cluster is dominated by petal length. In this case by changing the color 
+dimension to other attributes we can see their distribution with in each of the cluster. 
+Step 8: We can assure that resulting dataset which included each instance along with its assign cluster. To do 
+so we click the save button in the visualization window and save the result iris k-mean. The top portion of this 
+file is shown in the following figure. 
+Association Rule Mining in WEKA: 
+This experiment illustrates some of the basic elements of association rule mining using WEKA. The 
+sample dataset used for this example is test.arff 
+Step1: Open the data file in Weka Explorer. It is presumed that the required data fields have been 
+discretized. In this example it is age attribute. 
+Step2: Clicking on the associate tab will bring up the interface for association rule algorithm. 
+Step3: Use Apriori algorithm. 
+Step4: In order to change the parameters for the run (example support, confidence etc) we click on the text 
+box immediately to the right of the choose button.
+Dataset test.arff 
+@relation test 
+@attribute admissionyear {2005,2006,2007,2008,2009,2010} @attribute course {cse,mech,it,ece} 
+@data 
+% 
+2005, cse 
+2005, it 
+2005, cse 
+2006, mech 
+2006, it 
+2006, ece 
+2007, it 
+2007, cse 
+2008, it 
+2008, cse 
+2009, it 
+2009, ece 
+% 
+The following screenshot shows the association rules that were generated when apriori algorithm is 
+applied on the given dataset. 
+Output: 
+Preprocessing Data: 
+Classification of data using Naive Bayes Algorithm 
+
+Classification of data using J48 to view induction tree 
+
+CONCLUSION: 
+From this practical, I learned the essential steps of data preprocessing and how to apply classification, 
+clustering, and association algorithms using data mining tools like WEKA or 
+R. These techniques are fundamental for extracting valuable insights from data and making datadriven decisions in various applications. 
+
+
+
+EXPERIMENT NO. 7 
+Date of Performance: 
+Date of Submission: 
+Aim: To implement Clustering Algorithm. (K means). 
+Software used: Java/C/Python 
+Theory: 
+Clustering is the process of grouping the data into classes or clusters, so that objects within a cluster have high 
+similarity in comparison to one another but are very dissimilar to objects in other clusters. Dissimilarities are 
+assessed based on the attribute values describing the objects. Often, distance measures are used. Clustering 
+has its roots in many areas, including data mining, statistics, biology, and machine learning. 
+Clustering is also called data segmentation in some applications because clustering partitions large data sets 
+into groups according to their similarity. Clustering can also be used for outlier detection, where outliers 
+(values that are “far away” from any cluster) may be more interesting than common cases. Applications of 
+outlier detection include the detection of credit card fraud and the monitoring of criminal activities in electronic 
+commerce 
+Partitioning Methods 
+Given D, a data set of n objects, and k, the number of clusters to form, a partitioning algorithm organizes the 
+objects into k partitions (k _ n), where each partition represents a cluster. The clusters are formed to optimize 
+an objective partitioning criterion, such as a dissimilarity function based on distance, so that the objects within 
+a cluster are “similar,” whereas the objects of different clusters are “dissimilar” in terms of the data set 
+attributes. 
+Centroid-Based Technique: The k-Means Method 
+The k-means algorithm takes the input parameter, k, and partitions a set of n objects into k clusters so 
+that the resulting intracluster similarity is high but the intercluster similarity is low. Cluster similarity is 
+measured in regard to the mean value of the objects in a cluster, which can be viewed as the cluster’s centroid 
+or center of gravity. 
+
+First, it randomly selectsk of the objects, each of which initially represents a cluster mean or center. For each of the remaining objects, an object is assigned to the cluster to which it is the most similar, based on the distance between the object and the cluster mean. It then computes the new mean for each cluster. This process iterates until the criterion function converges. Typically, the square-error criterion is used, defined as
+
+E=∑_(i=1)^(k)∑_(p∈C_(i))|p-m_(i)|^(2)
+
+where E is the sum of the square error for all objects in the data set: p is the point in
+
+space representing a given object; and my is the mean of cluster C (both p and my are
+
+multidimensional). In other words, for each object in each cluster, the distance from the
+
+object to its cluster center is squared, and the distances are summed. This criterion tries
+
+to make the resulting k clusters as compact and as separate as possible. The k-means
+
+procedure is summarized in Figure 7.2.
+
+(7.18)
+
+Clustering by k-means partitioning. Suppose that there is a set of objects located in space as depicted in the rectangle shown in Figure 7.3(a). Let k = 3; that is, the user would like the objects to be partitioned into three clusters.
+
+According to the algorithm in Figure 7.2, we arbitrarily choose three objects as the three initial cluster centers, where cluster centers are marked by a "+". Each object is distributed to a cluster based on the cluster center to which it is the nearest. Such a dis- tribution forms silhouettes encircled by dotted curves, as shown in Figure 7.3(a).
+
+Next, the cluster centers are updated. That is, the mean value of each cluster is recalcu- lated based on the current objects in the cluster. Using the new cluster centers, the objects are redistributed to the clusters based on which cluster center is the nearest. Such a redis- tribution forms new silhouettes encircled by dashed curves, as shown in Figure 7.3(b).
+
+This process iterates, leading to Figure 7.3(c). The process of iteratively reassigning objects to clusters to improve the partitioning is referred to as iterative relocation. Eventually, no redistribution of the objects in any cluster occurs, and so the process ter- minates. The resulting clusters are returned by the clustering process.
+
+Algorithm: &-means. The k-means algorithm for partitioning, where each cluster's center is represented by the mean value of the objects in the cluster.
+
+Input:
+
+k: the number of clusters,
+
+D: a data set containing objects.
+
+Output: A set of k clusters.
+
+Method:
+
+(1) arbitrarily choose k objects from D as the initial cluster centers;
+
+(2) repeat
+
+(3) (re)assign each object to the cluster to which the object is the most similar, based on the mean value of the objects in the cluster;
+
+(4) update the cluster means, i.e., calculate the mean value of the objects for each cluster:
+
+(5) until no change:
+
+The k-means partitioning algorithm.
+
+(a)
+
+(b)
+
+(c)
+
+Clustering of a set of objects based on the k-means method. (The mean of each cluster is marked by a "+".)
+
+Advantages
+
+Advantages 
+ Easy to implement 
+ With a large number of variables, K- Means may be computationally faster than hierarchical clustering (if K 
+is small). 
+ k- Means may produce Higher clusters than hierarchical clustering 
+ An instance can change cluster (move to another cluster) when the centroids are re- computed. 
+Disadvantages 
+ Difficult to predict the number of clusters (K- Value) 
+ Initial seeds have a strong impact on the final results 
+ The order of the data has an impact on the final results 
+ Sensitive to scale: rescaling your datasets (normalization or standardization) will completely change results 
+Applications: 
+The K-means clustering algorithm is used to find groups which have not been explicitly labeled in the data. 
+This can be used to confirm business assumptions about what types of groups exist or to identify unknown 
+groups in complex data sets. Once the algorithm has been run and the groups are defined, any new data can 
+be easily assigned to the correct group. 
+This is a versatile algorithm that can be used for any type of grouping. Some examples of use cases are: 
+Behavioral segmentation: o Segment by purchase history o Segment by activities on application, website, or platform o Define personas based on interests
+o Create profiles based on activity monitoring
+Inventory categorization: o Group inventory by sales activity o Group inventory by manufacturing metrics
+Sorting sensor measurements: o Detect activity types in motion sensors o Group images o Separate audio o Identify groups in health monitoring 
+Detecting bots or anomalies: o Separate valid activity groups from bots o Group valid activity to clean up outlier detection
+Output: 
+CONCLUSION: 
+In this practical, I learned how to implement the K-means clustering algorithm. It's a valuable 
+technique for grouping data points into clusters based on their similarities. Clustering helps in 
+identifying patterns and structures within data, which can be useful in various data analysis and 
+machine learning applications. 
+
+
+
+EXPERIMENT NO. 8 
+Date of Performance: 
+Date of Submission: 
+Aim: Implementation of any one Hierarchical Clustering method 
+Software Used: Java/ Python 
+Theory: 
+A Hierarchical clustering method works via grouping data into a tree of clusters. Hierarchical clustering 
+begins by treating every data point as a separate cluster. Then, it repeatedly executes the subsequent steps: 
+1. Identify the 2 clusters which can be closest together, and 
+2. Merge the 2 maximum comparable clusters. We need to continue these steps until all the clusters are 
+merged together. 
+In Hierarchical Clustering, the aim is to produce a hierarchical series of nested clusters. A diagram called 
+Dendrogram (A Dendrogram is a tree-like diagram that statistics the sequences of merges or splits) 
+graphically represents this hierarchy and is an inverted tree that describes the order in which factors are 
+merged (bottom-up view) or cluster are break up (top-down view). 
+There are two types of hierarchical clustering methods: 
+1. Agglomerative hierarchical clustering: 
+This bottom-up strategy starts by placing each object in its own cluster and then merges these atomic 
+clusters into larger and larger clusters, until all of the objects are in a single cluster or until certain 
+termination conditions are satisfied. 
+2. Divisive hierarchical clustering: 
+This top-down strategy does the reverse of agglomerative hierarchical clustering by starting with all objects 
+in one cluster.It subdivides the cluster into smaller and smaller pieces, until each object forms a cluster on 
+its own or until it satisfies certain termination conditions, such as a desired number of clusters is obtained or 
+the diameter of each cluster is within a certain threshold. 
+AGGLOMERATIVE HIERARCHICAL CLUSTERING: - Figure shows the application of AGNES 
+(AGglomerativeNESting), an agglomerative hierarchical clustering method to a data set of five objects(a, b, 
+c, d, e).  Initially, AGNES places each object into a cluster of its own.  The clusters are then merged step-by-step according to some criterion. 
+Agglomerative Algorithm: 
+(AGNES) Given 
+-a set of N objects to be clustered 
+-an N*N distance matrix , 
+The basic process of clustering id this: 
+Step1: Assign each object to a cluster so that for N objects we have N clusters each containing just 
+one Object. 
+Step2: Let the distances between the clusters be the same as the distances between the objects they 
+contain. 
+Step3: Find the most similar pair of clusters and merge them into a single cluster so that we now have one 
+cluster less. 
+Step4: Compute distances between the new cluster and each of the old clusters. 
+Step5: Repeat steps 3 and 4 until all items are clustered into a single cluster of size N.  Step 4 can be done in different ways and this distinguishes single and complete linkage. 
+-> For complete-linkage algorithm: o clustering process is terminated when the maximum distance between nearest clusters exceeds an 
+arbitrary threshold. 
+-> For single-linkage algorithm: o clustering process is terminated when the minimum distance between nearest clusters exceeds an 
+arbitrary threshold. 
+o EXAMPLE: 
+Suppose this data is to be clustered. 
+ In this example, cutting the tree after the second row of the dendrogram will yield clusters {a} {b c} {d e} 
+{f}.  Cutting the tree after the third row will yield clusters {a} {b c} {d e f}, which is a coarser clustering, with a 
+smaller number but larger clusters. 
+The hierarchical clustering dendrogram would be as such: 
+In our example, we have six elements {a} {b} {c} {d} {e} and {f}. 
+The first step is to determine which elements to merge in a cluster. 
+Usually, we take the two closest elements, according to the chosen distance. 
+Then, as clustering progresses, rows and columns are merged as the clusters are merged and the distances 
+updated. Suppose we have merged the two closest elements b and c, we now have the following clusters {a}, 
+{b, c}, {d}, {e} and {f}, and want to merge them further. 
+To do that, we need to take the distance between {a} and {b c}, and therefore define the distance between two 
+clusters. Usually the distance between two clusters A and B is one of the following:  The maximum distance between elements of each cluster (also called complete-linkage clustering): max 
+{d(x,y):x∈A,y∈B} 
+ The minimum distance between elements of each cluster (also called single-linkage clustering): min 
+{d(x,y):x∈A,y∈B}  The mean distance between elements of each cluster (also called average linkage clustering): 
+Each agglomeration occurs at a greater distance between clusters than the previous agglomeration, and one 
+can decide to stop clustering either when the clusters are too far apart to be merged (distance criterion) or when 
+there is a sufficiently small number of clusters (number criterion). 
+Output: 
+CONCLUSION: 
+From this practical, I've learned how to implement a Hierarchical Clustering method. Hierarchical clustering 
+is a powerful technique for creating hierarchical structures of data points based on their similarities. It can help 
+uncover valuable insights and patterns within datasets, making it a valuable tool for data analysis and machine 
+learning tasks. 
+
+
+
+EXPERIMENT NO. 9 
+Date of Performance: 
+Date of Submission: 
+Aim: Implementation of Association rule Mining. (Apriori algorithm) 
+Software Used: Java/C/Python 
+Theory: 
+Frequent patterns are patterns (such as itemsets, subsequences, or substructures) that appear in a data set 
+frequently. For example, a set of items, such as milk and bread, that appear frequently together in a transaction 
+data set is a frequent itemset. Finding such frequent patterns plays an essential role in mining associations, 
+correlations, and many other interesting relationships among data. 
+Moreover, it helps in data classification, clustering, and other data mining tasks as well. Thus, frequent pattern 
+mining has become an important data mining task and a focused theme in data mining research. 
+The Apriori Algorithm: Finding Frequent Itemsets Using Candidate Generation 
+Apriori is a seminal algorithm proposed by R. Agrawal and R. Srikant in 1994 for mining frequent itemsets 
+for Boolean association rules. The name of the algorithm is based on the fact that the algorithm uses prior 
+knowledge of frequent itemset properties, as we shall see following. Apriori employs an iterative approach 
+known as a level-wise search, where k- itemsets are usedtoexplore (k+1)-itemsets. First, the setof frequent 1-
+itemsets is found by scanning the database to accumulate the count for each item, and collecting those items 
+that satisfy minimum support. The resulting set is denoted L1.Next, L1 is used to find L2, the set of frequent 
+2-itemsets, which is used to find L3, and so on, until no more frequent k-itemsets can be found. The finding 
+of each Lk requires one full scan of the database. 
+To improve the efficiency of the level-wise generation of frequent itemsets, an important property called the 
+Apriori property, presented below, is used to reduce the search space.We will first describe this property, and 
+then show an example illustrating its use. 
+Apriori property: All nonempty subsets of a frequent itemset must also be frequent A two-step process is 
+followed, consisting of join and prune actions.
+
+Algorithm: Apriori. Find frequent itemsets using an iterative level-wise approach based on candidate generation.
+
+Input:
+
+D, a database of transactions:
+
+min sup, the minimum support count threshold.
+
+Output: L., frequent itemsets in D.
+
+Method:
+
+(1) L-find frequent 1-itemsets(D);
+
+(2) for emptyset k = 2 ;L k-1 ne Phi;k+++)|
+
+(3)
+
+Capriori gen(L
+
+(4) for each transaction/ D // scan D for counts
+
+(5) Csubset(C); // get the subsets of t that are candidates
+
+(6) for each candidate ce C
+
+(7) c.count 1/2 + 1/2
+
+(8)
+
+(9) Lcc.count min sup)
+
+(10))
+
+(11) return L
+
+procedure apriori gen(L-frequent (k-1)-itemsets)
+
+(1)
+
+for each itemset/ 24-1
+
+(2) (3 ) for each itemset 214-1
+
+(4)
+
+if l 1 [1]=l 2 [1])^(l 1 [2]=l 2 [2])^...^ (l_{1}[k - 2] = l_{2}[k - 2]) ^ (l_{1}[k - 1] < l_{2}[k - 1]) then {
+
+(5) if has infrequent subset(c. 1) then
+
+(6) delete ct// prune step: remove unfruitful candidate
+
+(7) else add to C
+
+(8)
+
+(9) return G
+
+procedure has infrequent subset(c: candidate-itemset:
+
+La frequent (-1)-itemsets); // use prior knowledge
+
+(1) for each (1)-subsets of c
+
+(2) (3) if x L then return TRUE
+
+(4) return FALSE:
+
+The Apriori algorithm for discovering frequent itemsets for mining Boolean association rules.
+
+1. The join step: To find L₂, a set of candidate k-itemsets is generated by joining 14-1 with itself. This set of candidates is denoted C. Let 1 and 12 be itemsets in 14-1- The notation [j] refers to the jth item in l (e.g., 11 [k2] refers to the second to the last item in 1). By convention, Apriori assumes that items within a transaction or itemset are sorted in lexicographic order. For the (k-1)-itemset, I, this means that the items are sorted such that l_{i}[1] < l_{i}[2] <...<l i [k-1] The join, La-1-1 is performed, where members first (k-2) items are in common. That is, members 11 and 12 of L are joined if (I_{1}[1] = I_{2}[1]) ^(I 1 [2]= 12[2]) ...^ (l_{1}[k - 2] = l_{2}[k - 2]) ^ (l_{1}[k - 1] < l_{2}[k - 1]) . The condition [-1]< 12k-1] resulting itemset formed by joining 11 and 12 is h [1], 4[2], [k-2],14k-1],12k-1].
+
+2. The prune step: C is a superset of La, that is, its members may or may not be frequent,
+
+but all of the frequent k-itemsets are included in C. A scan of the database to determine
+
+the count of each candidate in Ce would result in the determination of L4 (i.e., all
+
+candidates having a count no less than the minimum support count are frequent by
+
+definition, and therefore belong to L₁). C, however, can be huge, and so this could
+
+involve heavy computation. To reduce the size of C₁, the Apriori property is used
+
+as follows. Any (k-1)-itemset that is not frequent cannot be a subset of a frequent
+
+k-itemset. Hence, if any (k-1)-subset of a candidate k-itemset is not in L4-1, then
+
+the candidate cannot be frequent either and so can be removed from C. This subset
+
+testing can be done quickly by maintaining a hash tree of all frequent itemsets.
+
+Advantages 
+• It is an easy-to-implement and easy-to-understand algorithm.
+• It can be used on large itemsets.
+Disadvantages 
+• Sometimes, it may need to find a large number of candidate rules which can be computationally expensive.
+• Calculating support is also expensive because it has to go through the entire database.
+Consider the following example. Before beginning the process, let us set the support threshold to 50%, i.e. 
+only those items are significant for which support is more than 50%. 
+Example: 
+Step 1: Create a frequency table of all the items that occur in all the transactions. For our case: 
+Step 2: We know that only those elements are significant for which the support is greater than or equal to the 
+threshold support. Here, support threshold is 50%, hence only those items are significant which occur in more 
+than three transactions and such items are Onion(O), Potato(P), Burger(B), and Milk(M). Therefore, we are 
+left with: 
+The table above represents the single items that are purchased by the customers frequently. 
+Step 3: The next step is to make all the possible pairs of the significant items keeping in mind that the order 
+doesn’t matter, i.e., AB is same as BA. To do this, take the first item and pair it with all the others such as OP, 
+OB, OM. Similarly, consider the second item and pair it with preceding items, i.e., PB, PM. We are only 
+considering the preceding items because PO (same as OP) already exists. So, all the pairs in our example are 
+OP, OB, OM, PB, PM, BM. 
+Step 4: We will now count the occurrences of each pair in all the transactions. 
+Step 5: Again only those itemsets are significant which cross the support threshold, and those are OP, OB, 
+PB, and PM. 
+Step 6: Now let’s say we would like to look for a set of three items that are purchased together. We will use 
+the itemsets found in step 5 and create a set of 3 items. 
+To create a set of 3 items another rule, called self-join is required. It says that from the item pairs OP, OB, 
+PB and PM we look for two pairs with the identical first letter and so we get 
+OP and OB, this gives OPB PB and PM, this gives PBM 
+Next, we find the frequency for these two itemsets. 
+Applying the threshold rule again, we find that OPB is the only significant itemset. Therefore, the set of 3 
+items that was purchased most frequently is OPB. 
+The example that we considered was a fairly simple one and mining the frequent itemsets stopped at 3 items 
+but in practice, there are dozens of items and this process could continue to many items. Suppose we got the 
+significant sets with 3 items as OPQ, OPR, OQR, OQS and PQR and now we want to generate the set of 4 
+items. For this, we will look at the sets which have first two alphabets common, i.e, 
+OPQ and OPR gives OPQR OQR and OQS 
+gives OQRS 
+In general, we have to look for sets which only differ in their last letter/item. Applications:  Market Basket Analysis  Network Forensics analysis
+ Analysis of diabetic databases  Adverse drug reaction detection Ecommerce
+Output: 
+CONCLUSION: 
+Through this practical, I've gained hands-on experience with the Apriori algorithm for association rule mining. 
+I've learned how to identify interesting patterns and associations within datasets, which can be applied in 
+various domains like market basket analysis and recommendation systems. This practical has given me 
+valuable insights into the world of data mining and how to extract meaningful knowledge from large datasets. 
+
+
+
+EXPERIMENT NO. 10 
+Date of Performance: 
+Date of Submission: 
+Aim: Implementation of Page Rank Algorithm. 
+Software used: Java/Python/C 
+Theory: 
+PageRank (PR) is an algorithm used by Google Search to rank websites in their search engine results. 
+PageRank was named after Larry Page, one of the founders of Google. PageRank is a way of measuring the 
+importance of website pages. According to Google: 
+PageRank works by counting the number and quality of links to a page to determine a rough estimate of how 
+important the website is. The underlying assumption is that more important websites are likely to receive more 
+links from other websites. 
+It is not the only algorithm used by Google to order search engine results, but it is the first algorithm that was 
+used by the company, and it is the best-known.The above centrality measure is not implemented for multigraphs. 
+Algorithm: 
+The PageRank algorithm outputs a probability distribution used to represent the likelihood that a person 
+randomly clicking on links will arrive at any particular page. PageRank can be calculated for collections of 
+documents of any size. The PageRank computations require several passes, called “iterations”, through the 
+collection to adjust approximate PageRank values to more closely reflect the theoretical true value. 
+Working: 
+Assume a small universe of four web pages: A, B, C and D. Links from a page to itself, or multiple outbound 
+links from one single page to another single page, are ignored. PageRank is initialized to the same value for 
+all pages. In the original form of PageRank, the sum of PageRank over all pages was the total number of pages 
+on the web at that time, so each page in this example would have an initial value of 1. However, later versions 
+of PageRank, and the remainder of this section, assume a probability distribution between 0 and 1. Hence the 
+initial value for each page in this example is 0.25. 
+The PageRank transferred from a given page to the targets of its outbound links upon the next iteration 
+is divided equally among all outbound links. 
+If the only links in the system were from pages B, C, and D to A, each link would transfer 0.25 
+PageRank to A upon the next iteration, for a total of 0.75. 
+PR(A)=PR(B)+PR(C)+PR (D) 
+Suppose instead that page B had a link to pages C and A, page C had a link to page A, and page D had links 
+to all three pages. Thus, upon the first iteration, page B would transfer half of its existing value, or 0.125, to 
+page A and the other half, or 0.125, to page C. Page C would transfer all of its existing value, 0.25, to the only 
+page it links to, A. Since D had three outbound links, it would transfer one third of its existing value, or 
+approximately 0.083, to A. At the completion of this iteration, page A will have a PageRank of approximately 
+0.458. 
+PR(A)=PR(B)/2+PR(C)/1 
++PR(D)/3 
+In other words, the PageRank conferred by an outbound link is equal to the document’s own PageRank score 
+divided by the number of outbound links L( ). 
+PR(A)=PR(B)/L(B)+PR(C)/L(C)+PR(D)/L(D) 
+In the general case, the PageRank value for any page u can be expressed as: 
+i.e., the PageRank value for a page u is dependent on the PageRank values for each page v contained in the 
+set Bu (the set containing all pages linking to page u), divided by the number L(v) of links from page v. The 
+algorithm involves a damping factor for the calculation of the page rank. 
+Program: 
+import networkx as nx import pandas as pd 
+data = pd.read_csv('transaction_data.csv') G = nx.DiGraph() 
+users = data['UserName'].unique() G.add_nodes_from(users) pagerank = nx.pagerank(G) 
+data['PageRank'] = data['UserName'].map(pagerank) 
+sorted_data = data.sort_values(by='PageRank', ascending=False) print(sorted_data[['TransactionID', 
+'UserName', 'PageRank']]) 
+Output: 
+CONCLUSION: 
+From this practical, I've learned how to implement the Page Rank Algorithm. Page Rank is a fundamental 
+algorithm in web search and graph analysis, and it plays a crucial role in determining the importance of web 
+pages. This practical has provided insights into the mechanics of Page Rank and its significance in ranking web 
+pages based on their relevance and importance. 
