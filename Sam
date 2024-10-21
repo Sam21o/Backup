@@ -546,7 +546,41 @@ o Create profiles based on activity monitoring
 Inventory categorization: o Group inventory by sales activity o Group inventory by manufacturing metrics
 Sorting sensor measurements: o Detect activity types in motion sensors o Group images o Separate audio o Identify groups in health monitoring 
 Detecting bots or anomalies: o Separate valid activity groups from bots o Group valid activity to clean up outlier detection
+
 Output: 
+
+
+
+Code :
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.cluster import KMeans
+from sklearn.datasets import make_blobs
+
+# Generating sample data with 3 clusters
+X, y = make_blobs(n_samples=300, centers=3, random_state=42, cluster_std=1.0)
+
+# Visualizing the data
+plt.scatter(X[:, 0], X[:, 1], c='blue', marker='o', s=50)
+plt.title('Data before clustering')
+plt.show()
+
+# Initializing the KMeans model
+kmeans = KMeans(n_clusters=3, random_state=42)
+
+# Fitting the model to the data
+kmeans.fit(X)
+
+# Getting the cluster labels
+y_kmeans = kmeans.predict(X)
+
+# Visualizing the clustered data
+plt.scatter(X[:, 0], X[:, 1], c=y_kmeans, cmap='viridis')
+plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], s=200, c='red', marker='X', label='Centroids')
+plt.title('K-Means Clustering')
+plt.legend()
+plt.show()
+
 CONCLUSION: 
 In this practical, I learned how to implement the K-means clustering algorithm. It's a valuable 
 technique for grouping data points into clusters based on their similarities. Clustering helps in 
@@ -620,7 +654,32 @@ clusters. Usually the distance between two clusters A and B is one of the follow
 Each agglomeration occurs at a greater distance between clusters than the previous agglomeration, and one 
 can decide to stop clustering either when the clusters are too far apart to be merged (distance criterion) or when 
 there is a sufficiently small number of clusters (number criterion). 
+
 Output: 
+
+
+
+Code:
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.cluster.hierarchy import dendrogram, linkage
+from sklearn.datasets import make_blobs
+
+# Generating sample data
+X, y = make_blobs(n_samples=100, centers=3, random_state=42, cluster_std=1.0)
+
+# Performing hierarchical clustering using 'ward' linkage method
+Z = linkage(X, method='ward')
+
+# Plotting the dendrogram
+plt.figure(figsize=(10, 7))
+dendrogram(Z)
+plt.title('Hierarchical Clustering Dendrogram')
+plt.xlabel('Sample Index')
+plt.ylabel('Distance')
+plt.show()
+
 CONCLUSION: 
 From this practical, I've learned how to implement a Hierarchical Clustering method. Hierarchical clustering 
 is a powerful technique for creating hierarchical structures of data points based on their similarities. It can help 
@@ -787,7 +846,45 @@ OPQ and OPR gives OPQR OQR and OQS
 gives OQRS 
 In general, we have to look for sets which only differ in their last letter/item. Applications:  Market Basket Analysis  Network Forensics analysis
  Analysis of diabetic databases  Adverse drug reaction detection Ecommerce
+
 Output: 
+Frequent Itemsets:
+    support       itemsets
+0     0.6         (Item 1)
+1     0.6         (Item 2)
+2     0.6         (Item 4)
+
+Association Rules:
+   antecedents  consequents  antecedent support  consequent support  support  confidence  lift  leverage  conviction
+0      (Item 1)      (Item 2)                 0.6                 0.6      0.6       1.00  1.67      0.2      inf
+
+
+Code:
+
+import pandas as pd
+from mlxtend.frequent_patterns import apriori, association_rules
+
+# Sample dataset
+dataset = {'Item 1': [1, 0, 1, 1, 0],
+           'Item 2': [1, 1, 0, 1, 1],
+           'Item 3': [0, 0, 0, 1, 0],
+           'Item 4': [1, 1, 1, 0, 0],
+           'Item 5': [0, 1, 0, 1, 1]}
+
+# Creating a DataFrame
+df = pd.DataFrame(dataset)
+
+# Applying Apriori Algorithm
+# min_support: Minimum support threshold
+frequent_itemsets = apriori(df, min_support=0.6, use_colnames=True)
+
+# Generating Association Rules
+rules = association_rules(frequent_itemsets, metric="confidence", min_threshold=0.7)
+
+# Output the frequent itemsets and association rules
+print("Frequent Itemsets:\n", frequent_itemsets)
+print("\nAssociation Rules:\n", rules)
+
 CONCLUSION: 
 Through this practical, I've gained hands-on experience with the Apriori algorithm for association rule mining. 
 I've learned how to identify interesting patterns and associations within datasets, which can be applied in 
@@ -842,6 +939,7 @@ In the general case, the PageRank value for any page u can be expressed as:
 i.e., the PageRank value for a page u is dependent on the PageRank values for each page v contained in the 
 set Bu (the set containing all pages linking to page u), divided by the number L(v) of links from page v. The 
 algorithm involves a damping factor for the calculation of the page rank. 
+
 Program: 
 import networkx as nx import pandas as pd 
 data = pd.read_csv('transaction_data.csv') G = nx.DiGraph() 
