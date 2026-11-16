@@ -82,6 +82,17 @@ Script To Display System Information
 1 Get-ComputerInfo | Select-Object WindowsProductName, Windows Version, CsName, CsManufacturer, CsModel
 
 
+Scrip to check Disk Space
+
+1 Get-Volume |
+
+2 Select DriveLetter,
+
+3 @{Name="SizeGB"; Expression={:Round($_.Size/1GB,2)}},
+
+4 @{Name="FreeGB"; Expression={:Round($_.SizeRemaining/1GB,2)}}
+
+
 
 Script to Check CPU and Memory
 
