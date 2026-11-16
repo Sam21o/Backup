@@ -1,0 +1,96 @@
+Get-ExecutionPolicy
+
+Set-ExecutionPolicy RemoteSigned
+
+How to change Host Name
+
+Rename-Computer - NewName "DC01"
+
+Rename and Restart Machine
+
+Rename-Computer - NewName "DC01" -Restart
+
+Verify
+
+Hostname
+
+Disable Firewall for all Profiles
+
+Set-NetFirewallProfile -Profile Domain, Private, Public -Enabled False
+
+Verify
+
+Get-NetFirewall Profile
+
+
+
+Installation of ADDS, DHCP, WDS, FSMO Roles
+
+Install-Windows Feature -Name AD-Domain-Services -Include Management Tools
+
+Install-WindowsFeature -Name DHCP-IncludeManagementTools
+
+Install-Windows Feature -Name WDS-IncludeManagement Tools
+
+Install-WindowsFeature -Name FS-Resource-Manager -Include Management Tools
+
+Uninstallation of ADDS, DHCP, WDS, FSMO Roles
+
+Uninstall-Windows Feature -Name AD-Domain-Services
+
+Uninstall-Windows Feature -Name DHCP
+
+Uninstall-WindowsFeature -Name WDS
+
+Uninstall-WindowsFeature -Name FS-Resource-Manager
+
+
+
+Get-Help
+
+Get-Process
+
+Get-Command
+
+Get-Service
+
+Get-Date
+
+Get-Date -Format "dd-MM-yyyy"
+
+Start-Process notepad
+
+Stop-Process -Name notepad
+
+Get-Service
+
+Start-Service spooler
+
+Stop-Service spooler
+
+
+
+
+Test-Path "E:\Capgemini""
+
+Test-Path "C:\test"
+
+
+
+Script To Display System Information
+
+1 Get-ComputerInfo | Select-Object WindowsProductName, Windows Version, CsName, CsManufacturer, CsModel
+
+
+
+Script to Check CPU and Memory
+
+1 Get-CimInstance Win32_OperatingSystem |
+
+2 Select-Object @{Name="TotalRAM (GB)"; Expression= {:Round($`_.TotalVisibleMemorySize/1MB, 2)}},
+
+3 @{Name="FreeRAM (GB)"; Expression={:Round(`$_.FreePhysicalMemory/1MB,2)}}
+
+
+
+
