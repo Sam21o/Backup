@@ -105,3 +105,73 @@ Script to Check CPU and Memory
 
 
 
+# 1. Rename Server Core to dc-core
+
+Rename-Computer -NewName "dc-core" -Force -Restart
+
+# After restart, verify hostname
+hostname
+$env:COMPUTERNAME
+
+
+# 2. DHCP Role Installation, Verification & Uninstallation
+
+# Install DHCP
+Install-WindowsFeature DHCP -IncludeManagementTools
+
+# Verify DHCP installation
+Get-WindowsFeature DHCP
+
+# Uninstall DHCP
+Uninstall-WindowsFeature DHCP
+
+# Verify DHCP uninstallation
+Get-WindowsFeature DHCP
+
+
+# ADDS Role Installation, Verification & Uninstallation
+
+# Install ADDS
+Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
+
+# Verify ADDS installation
+Get-WindowsFeature AD-Domain-Services
+
+# Uninstall ADDS
+Uninstall-WindowsFeature AD-Domain-Services
+
+# Verify ADDS uninstallation
+Get-WindowsFeature AD-Domain-Services
+
+
+# 3. Services Management – Example 1 (Print Spooler)
+
+# Check service
+Get-Service Spooler
+
+# Start service
+Start-Service Spooler
+
+# Verify
+Get-Service Spooler
+
+# Stop service
+Stop-Service Spooler
+
+# Verify
+Get-Service Spooler
+
+
+# Services Management – Example 2 (Windows Time)
+
+# Check service
+Get-Service W32Time
+
+# Start service
+Start-Service W32Time
+
+# Restart service
+Restart-Service W32Time
+
+# Verify
+Get-Service W32Time
